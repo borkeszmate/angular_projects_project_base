@@ -1,0 +1,40 @@
+<div class="row my-4">
+  <div class="container">
+    <a href="#"  class="btn btn-primary btn-lg btn-block" (click)="addNewProjectBtn()">Add Project
+    </a>
+    <form *ngIf="addProjectShow" #addProjectForm="ngForm" (ngSubmit)="onAddNewProjectSubmit(addProjectForm)">
+      
+      <div class="form-group">
+        <label for="projectName">Project Name</label>
+        <input 
+          type="text" 
+          name="projectName"  
+          class="form-control"  
+          name="projectName"
+          ngModel
+          [ngClass]="{'is-invalid' : projectName?.errors && projectName.touched }"
+          required
+          >
+
+          <label for="">Secret password</label>
+          <select 
+            name="select"
+            class="form-control"
+            [ngModel]="defaultSelect"
+            #select
+            
+            >
+            <option value="pet">What was the name of your first pet?</option>
+            <option value="teacher">What was the name of your first teacher?</option>
+          </select>
+      <input type="submit"
+       value="Add Project"
+        class="btn btn-primary mt-2"
+        
+        [disabled]="!addProjectForm.valid"
+        >
+      </div>
+    </form>
+
+  </div>
+</div>

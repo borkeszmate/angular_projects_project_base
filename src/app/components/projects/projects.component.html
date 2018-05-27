@@ -1,0 +1,10 @@
+<div class="container">
+  <ul class="list-group" *ngFor="let project of projects; let i = index">
+    <a href="#">
+      <li (click)="onProjectClick(i)" class=" my-2 list-group-item list-group-item-action flex-column align-items-start">
+        <h2 class="d-flex justify-content-between w-100">{{i}}. {{project.name}}</h2>
+        <p class="mb-2">{{project.body}}</p>
+      </li>
+    </a>
+  </ul>
+</div>

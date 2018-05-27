@@ -1,0 +1,7 @@
+<div *ngIf="project.name != ''" class="card">
+  <div class="card-header">{{project.name}}</div>
+  <div class="card-body">
+     {{project.body}}
+     <img class="img-fluid" [src]="project.picture" [alt]="project.name">
+  </div>
+</div>
